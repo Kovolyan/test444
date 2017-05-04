@@ -34,8 +34,8 @@ module.exports = function(grunt) {
                 src: 'js/build/production.js',
                 dest: 'js/build/production.min.js'
             }
-        },
-        
+        }
+
 
     });
 
