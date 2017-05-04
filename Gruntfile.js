@@ -45,6 +45,7 @@ module.exports = function(grunt) {
             }
         },
 
+       
          watch: {
             sass: {
                 files: ['sass/*.sass'],
@@ -53,7 +54,7 @@ module.exports = function(grunt) {
                     spawn: false,
                 }
             },
-            
+
             sprite: {
                 files: ['images/sprites/*'],
                 tasks: ['sprite']
@@ -74,9 +75,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+   
     grunt.loadNpmTasks('grunt-contrib-watch');
 
    
-    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'sprite']);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'sprite',]);
 
 };
