@@ -16,6 +16,15 @@ module.exports = function(grunt) {
             }
         },
 
+        sprite: {
+            all: {
+                src: 'images/sprites/*',
+                dest: 'images/sprites.png',
+                destCss: 'sass/_sprites.sass',
+                padding: 2
+            }
+        },
+
        concat: {
             dist: {
                 src: [
@@ -44,6 +53,11 @@ module.exports = function(grunt) {
                     spawn: false,
                 }
             },
+            
+            sprite: {
+                files: ['images/sprites/*'],
+                tasks: ['sprite']
+            },
 
             scripts: {
                 files: ['js/*.js'],
@@ -57,11 +71,12 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
    
-    grunt.registerTask('default', ['concat', 'uglify', 'sass']);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'sprite']);
 
 };
