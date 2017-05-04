@@ -34,8 +34,7 @@ module.exports = function(grunt) {
                 src: 'js/build/production.js',
                 dest: 'js/build/production.min.js'
             }
-        }
-
+        },
 
     });
 
@@ -44,6 +43,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
    
-    grunt.registerTask('default', ['concat', 'uglify','sass']);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass']);
 
 };
