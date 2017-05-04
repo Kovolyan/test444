@@ -36,13 +36,32 @@ module.exports = function(grunt) {
             }
         },
 
+         watch: {
+            sass: {
+                files: ['sass/*.sass'],
+                tasks: ['sass'],
+                options: {
+                    spawn: false,
+                }
+            },
+
+            scripts: {
+                files: ['js/*.js'],
+                tasks: ['concat', 'uglify'],
+                options: {
+                    spawn: false,
+                }
+            }
+        }
+
     });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
    
-    grunt.registerTask('default', ['concat', 'uglify', 'sass']);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'watch']);
 
 };
