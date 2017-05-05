@@ -35,7 +35,15 @@ module.exports = function(grunt) {
                     'js/common.js'
                 ],
                 dest: 'js/build/production.js'
-            }
+            },
+             dist: {
+                src: [
+                    'css/slick/slick.css',
+                    'css/jquery.selectBoxIt.css'
+                ],
+                dest: 'css/build/production.css'
+            },
+
         },
 
         uglify: {
@@ -45,7 +53,12 @@ module.exports = function(grunt) {
             }
         },
 
-       
+        cssmin: {
+          build: {
+                src: 'css/build/production.css',
+                dest: 'css/build/production.min.css'
+            }
+        },
          watch: {
             sass: {
                 files: ['sass/*.sass'],
@@ -75,10 +88,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-   
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
    
-    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'sprite',]);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'sprite', 'cssmin']);
 
 };
