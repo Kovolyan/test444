@@ -9,9 +9,12 @@ module.exports = function(grunt) {
                 options: {
                     sourceMap: true,
                     outputStyle: 'compressed'
+
                 },
+
                 files: {
-                    'css/main.css': 'sass/main.sass'
+                    'css/main.css': 'sass/main.sass',
+                    
                 }
             }
         },
@@ -42,6 +45,13 @@ module.exports = function(grunt) {
                     'css/jquery.selectBoxIt.css'
                 ],
                 dest: 'css/build/production.css'
+            },
+             dist: {
+                src: [
+                    'sass/base/base_reset.sass',
+                    'sass/components/components_buttons.sass'
+                ],
+                dest: 'sass/production.sass'
             },
 
         },

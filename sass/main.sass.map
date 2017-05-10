@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "main.sass",
+	"sources": [
+		"components/components_buttons.sass"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,IAAI,AAAC,CACJ,WAAW,CAAE,IAAI,CAAI"
+}
